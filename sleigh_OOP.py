@@ -56,61 +56,59 @@ reindeer = 0
 speed = 100 
 
 sleigh = Sleigh(speed, color, driver, reindeer)
-def main():
+
 # TODO: Print program title
-    console.print(
-    Panel.fit(
-        " Welcome to Steve's Sleigh Studio",
-        style="bold red",
-        subtitle="By Savannah"))
+console.print(
+Panel.fit(
+    " Welcome to Steve's Sleigh Studio",
+    style="bold red",
+    subtitle="By Savannah"))
     
-    # allow for user input of variables
-    color = input("What color is your sleigh? ")
-    sleigh.set_color(color)
-    driver = input("Who is driving the Sleigh? ")
-    sleigh.set_driver(driver)
-    reindeer = int(input("How many reindeer do you have? "))
-    sleigh.set_reindeer(reindeer)
-    speed = int(input("How fast do you want to go?"))
-    sleigh = Sleigh(speed, color, driver, reindeer)
-    print(sleigh.sleigh_info())
+# allow for user input of variables
+color = input("What color is your sleigh? ")
+sleigh.set_color(color)
+driver = input("Who is driving the Sleigh? ")
+sleigh.set_driver(driver)
+reindeer = int(input("How many reindeer do you have? "))
+sleigh.set_reindeer(reindeer)
+speed = int(input("How fast do you want to go?"))
+sleigh = Sleigh(speed, color, driver, reindeer)
+print(sleigh.sleigh_info())
 
-    # initialize sleigh class
-    sleigh = Sleigh(speed, color, driver, reindeer)
-    # print a menu of choices
-    menu = input("Build your sleigh! [(d)eliver presents] [add (r)eindeer] [increase (s)peed] [(c)ookie break] [(v)iew] [e(x)it]: ")
-    # use a while loop to allow to keep going through the menu
-    while menu != "x":
-        # menu == d
-        if menu == "d":
-            print(sleigh.deliver_presents())
-            menu = input("Build your sleigh! [(d)eliver presents] [add (r)eindeer] [increase (s)peed] [(c)ookie break] [(v)iew] [e(x)it]: ")
-        # menu == r
-        elif menu == "r":
-            reindeer = input("How many Reindeer do you want now? ")
-            sleigh.set_reindeer(reindeer)
-            menu = input("Build your sleigh! [(d)eliver presents] [add (r)eindeer] [increase (s)peed] [(c)ookie break] [(v)iew] [e(x)it]: ")
-        # menu == r
-        elif menu == "c":
-            print(sleigh.eat_cookies())
-            menu = input("Build your sleigh! [(d)eliver presents] [add (r)eindeer] [increase (s)peed] [(c)ookie break] [(v)iew] [e(x)it]: ")
-        # menu == s
-        elif menu == "s":
-            speed = sleigh.set_speed(sleigh.speed)
-            print(f"{driver}'s sleigh is going {speed} mph")
+# initialize sleigh class
+sleigh = Sleigh(speed, color, driver, reindeer)
+# print a menu of choices
+menu = input("Build your sleigh! [(d)eliver presents] [add (r)eindeer] [increase (s)peed] [(c)ookie break] [(v)iew] [e(x)it]: ")
+# use a while loop to allow to keep going through the menu
+while menu != "x":
+    # menu == d
+    if menu == "d":
+        print(sleigh.deliver_presents())
+        menu = input("Build your sleigh! [(d)eliver presents] [add (r)eindeer] [increase (s)peed] [(c)ookie break] [(v)iew] [e(x)it]: ")
+    # menu == r
+    elif menu == "r":
+        reindeer = input("How many Reindeer do you want now? ")
+        sleigh.set_reindeer(reindeer)
+        menu = input("Build your sleigh! [(d)eliver presents] [add (r)eindeer] [increase (s)peed] [(c)ookie break] [(v)iew] [e(x)it]: ")
+    # menu == r
+    elif menu == "c":
+        print(sleigh.eat_cookies())
+        menu = input("Build your sleigh! [(d)eliver presents] [add (r)eindeer] [increase (s)peed] [(c)ookie break] [(v)iew] [e(x)it]: ")
+    # menu == s
+    elif menu == "s":
+        speed = sleigh.set_speed(sleigh.speed)
+        print(f"{driver}'s sleigh is going {speed} mph")
 
-            menu = input("Build your sleigh! [(d)eliver presents] [add (r)eindeer] [increase (s)peed] [(c)ookie break] [(v)iew] [e(x)it]: ")
-        # menu == v
-        elif menu == "v":
-            print(sleigh.sleigh_info())
-            menu = input("Build your sleigh! [(d)eliver presents] [add (r)eindeer] [increase (s)peed] [(c)ookie break] [(v)iew] [e(x)it]: ")
+        menu = input("Build your sleigh! [(d)eliver presents] [add (r)eindeer] [increase (s)peed] [(c)ookie break] [(v)iew] [e(x)it]: ")
+    # menu == v
+    elif menu == "v":
+        print(sleigh.sleigh_info())
+        menu = input("Build your sleigh! [(d)eliver presents] [add (r)eindeer] [increase (s)peed] [(c)ookie break] [(v)iew] [e(x)it]: ")
 
-        # catch bad input
-        else:
-            print("Invalid Input. Please Try again.")
-            menu = input("Build your sleigh! [(d)eliver presents] [add (r)eindeer] [increase (s)peed] [(c)ookie break] [(v)iew] [e(x)it]: ")
+    # catch bad input
+    else:
+        print("Invalid Input. Please Try again.")
+        menu = input("Build your sleigh! [(d)eliver presents] [add (r)eindeer] [increase (s)peed] [(c)ookie break] [(v)iew] [e(x)it]: ")
 
-# call main function
-main()
 print("Have a nice day!")
 
